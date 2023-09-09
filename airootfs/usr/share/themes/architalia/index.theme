@@ -1,0 +1,19 @@
+[GTK]
+Name=architalia
+Comment=Arch Linux themed GTK4 theme for Italian users
+
+
+[Application]
+Name=architalia
+
+[Settings]
+gtk-shell-shows-app-menu=false
+
+[WM]
+Name=Metacity
+
+[GtkSettings]
+gtk-application-prefer-dark-theme=true
+gtk-theme-name=architalia
+gtk-fallback-icon-theme=gnome
+gtk-icon-theme-name=architalia

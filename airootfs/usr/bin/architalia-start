@@ -1,0 +1,55 @@
+#!/bin/bash
+#
+# Author : Jonathan Sanfilippo
+# Date: Jun 2023
+# Version 1.0.0: archiso configurazione e script
+
+bk=$(gsettings set org.gnome.desktop.background  picture-uri /home/archie/.local/share/backgrounds/core/core-de.png)
+bk2=$(gsettings set org.gnome.desktop.background  picture-uri-dark /home/archie/.local/share/backgrounds/core/core-d.png)
+#extuserthemes=$(gnome-extensions enable  user-theme@gnome-shell-extensions.gcampax.github.com)
+#ding=$(gnome-extensions enable ding@rastersoft.com)
+#shell=$(gsettings set org.gnome.shell.extensions.user-theme name "architalia")
+#legacx=$(gsettings set org.gnome.desktop.interface gtk-theme "architalia")
+#icn=$(gsettings set org.gnome.desktop.interface icon-theme 'Core')
+#cur=$(gsettings set org.gnome.desktop.interface cursor-theme 'Core')
+#nauicn=$(gsettings set org.gnome.nautilus.icon-view default-zoom-level small-plus)
+#fnts=$(gsettings set org.gnome.desktop.interface font-name 'Architalia Regular 12')
+#fnts2=$(gsettings set org.gnome.desktop.wm.preferences titlebar-font 'Architalia Bold 12')
+#fnts3=$(gsettings set org.gnome.desktop.interface monospace-font-name 'Architalia Mono Bold 11')
+#nord="/home/archie/.cache/tmp/nord.sh"
+
+
+start(){
+
+   #$extuserthemes
+   #$shell
+   #$legacx
+   $bk
+   $bk2
+   #$icn
+   #$cur
+   #$nauicn
+   #$fnts
+   #$fnts2
+   #$fnts3
+   
+   rm -rf /usr/share/applications/*.desktop
+   cp -r /home/archie/.cache/tmp/d0623/* /home/archie/.local/share/applications/
+   rm -r /home/archie/{Documents,Templates,Public,Music,Pictures,Videos}
+   mkdir -p /home/archie/{Guide,Installscript}
+   cp -r /home/archie/.cache/tmp/g0623/* /home/archie/Guide/
+   cp -r /home/archie/.cache/tmp/.zshrc /home/archie/
+   cp -r /home/archie/.cache/tmp/i0623/*  /home/archie/Installscript/
+   chmod +x /home/archie/Installscript/*
+   #chmod +x /home/archie/.cache/tmp/nord.sh
+   #$nord
+
+   #sudo pacman -U /home/archie/.cache/tmp/pkg/*.zst --noconfirm
+   
+   #clean
+   #rm -rf /home/archie/.cache/tmp
+   
+}
+
+start
+
